@@ -10,14 +10,14 @@ namespace Catalog.API.Data
 {
     public class CatalogContext : ICatalogContext
     {
+        private readonly MongoClient _mongoClient;
+
         public CatalogContext(IConfiguration configuration)
         {
-            var client = new MongoClient(configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
-            var database = client.GetDatabase(configuration.GetValue<string>("DatabaseSettings:DatabaseName"));
+            _mongoClient = new MongoClient(configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
+            var database = _mongoClient.GetDatabase(configuration.GetValue<string>("DatabaseSettings:DatabaseName"));
 
             Products = database.GetCollection<Product>(configuration.GetValue<string>("DatabaseSettings: DatabaseName"));
-
-
         }
 
         public IMongoCollection<Product> Products { get; set; }
