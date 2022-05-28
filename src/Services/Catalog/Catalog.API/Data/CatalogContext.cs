@@ -16,8 +16,10 @@ namespace Catalog.API.Data
             var database = client.GetDatabase(configuration.GetValue<string>("DatabaseSettings:DatabaseName"));
 
             Products = database.GetCollection<Product>(configuration.GetValue<string>("DatabaseSettings: DatabaseName"));
+
+
         }
 
-        public IMongoCollection<Product> Products { get; private set; }
+        public IMongoCollection<Product> Products { get; set; }
     }
 }
