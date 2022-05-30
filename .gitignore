@@ -353,3 +353,6 @@ MigrationBackup/
 src/Services/Catalog/Catalog.API/Properties/
 src/Services/Catalog/Catalog.API/appsettings.Development.json
 src/Services/Catalog/Catalog.API/appsettings.json
+src/Services/Basket/Basket.API/Properties/
+src/Services/Basket/Basket.API/appsettings.Development.json
+src/Services/Basket/Basket.API/appsettings.json
