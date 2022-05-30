@@ -17,7 +17,8 @@ namespace Catalog.API.Data
             _mongoClient = new MongoClient(configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
             var database = _mongoClient.GetDatabase(configuration.GetValue<string>("DatabaseSettings:DatabaseName"));
 
-            Products = database.GetCollection<Product>(configuration.GetValue<string>("DatabaseSettings: DatabaseName"));
+            Products = database.GetCollection<Product>(configuration.GetValue<string>("DatabaseSettings:CollectionName"));
+            CatalogContextSeeder.SeedData(Products);
         }
 
         public IMongoCollection<Product> Products { get; set; }
