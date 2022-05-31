@@ -356,3 +356,6 @@ src/Services/Catalog/Catalog.API/appsettings.json
 src/Services/Basket/Basket.API/Properties/
 src/Services/Basket/Basket.API/appsettings.Development.json
 src/Services/Basket/Basket.API/appsettings.json
+src/Services/Discount/Discount.API/Properties/
+src/Services/Discount/Discount.API/appsettings.Development.json
+src/Services/Discount/Discount.API/appsettings.json
