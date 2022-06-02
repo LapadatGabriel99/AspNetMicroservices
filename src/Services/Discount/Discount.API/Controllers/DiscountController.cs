@@ -18,13 +18,13 @@ namespace Discount.API.Controllers
 
         private readonly ILogger<DiscountController> _logger;
 
-        public DiscountController(IDiscountRepository discountRepository, ILogger<DiscountController> _logger)
+        public DiscountController(IDiscountRepository discountRepository, ILogger<DiscountController> logger)
         {
             _discountRepository = discountRepository;
-            this._logger = _logger;
+            _logger = logger;
         }
 
-        [HttpGet("{productName}", Name = "GetProduct")]
+        [HttpGet("{productName}", Name = "GetDiscount")]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(Coupon))]
         public async Task<ActionResult<Coupon>> GetDiscount(string productName)
         {
@@ -45,7 +45,7 @@ namespace Discount.API.Controllers
                 return StatusCode((int)HttpStatusCode.BadRequest);
             }
 
-            return CreatedAtRoute("GetDiscount", new { productName = coupon.ProductName });
+            return RedirectToAction("GetDiscount", "Discount", new { productName = coupon.ProductName });
         }
 
         [HttpPut]
@@ -60,7 +60,7 @@ namespace Discount.API.Controllers
                 return StatusCode((int)HttpStatusCode.BadRequest);
             }
 
-            return CreatedAtRoute("GetDiscount", new { productName = coupon.ProductName });
+            return CreatedAtRoute("GetDiscount", new { productName = coupon.ProductName }, coupon);
         }
 
         [HttpDelete("{productName}", Name = "GetProduct")]
