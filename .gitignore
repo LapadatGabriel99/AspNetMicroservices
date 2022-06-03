@@ -359,3 +359,6 @@ src/Services/Basket/Basket.API/appsettings.json
 src/Services/Discount/Discount.API/Properties/
 src/Services/Discount/Discount.API/appsettings.Development.json
 src/Services/Discount/Discount.API/appsettings.json
+src/Services/Discount/Discount.GRPC/Properties/
+src/Services/Discount/Discount.GRPC/appsettings.Development.json
+src/Services/Discount/Discount.GRPC/appsettings.json
