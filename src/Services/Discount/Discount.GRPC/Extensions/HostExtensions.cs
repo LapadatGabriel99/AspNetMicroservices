@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Discount.GRPC.Helpers.Contracts;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -26,6 +27,8 @@ namespace Discount.GRPC.Extensions
                 try
                 {
                     logger.LogInformation("Trying to migrate discount db");
+
+                    var connectionString = string.Empty;
 
                     using var connection = new NpgsqlConnection(configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
 
