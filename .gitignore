@@ -362,3 +362,6 @@ src/Services/Discount/Discount.API/appsettings.json
 src/Services/Discount/Discount.GRPC/Properties/
 src/Services/Discount/Discount.GRPC/appsettings.Development.json
 src/Services/Discount/Discount.GRPC/appsettings.json
+src/Services/Ordering/Ordering.API/Properties/
+src/Services/Ordering/Ordering.API/appsettings.Development.json
+src/Services/Ordering/Ordering.API/appsettings.json
