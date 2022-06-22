@@ -60,11 +60,20 @@ namespace Ordering.Application.Features.Orders.Commands.CheckoutOrder
 
         private async Task SendEmail()
         {
-            await _emailService.SendEmail(
+            var result = await _emailService.SendEmail(
                 _emailBuilder
                 .To("lapadatrobert123@gmail.com")
                 .Subject("Order Api")
                 .Body("Order was created").Create());
+
+            if (!result)
+            {
+                _logger.LogError("Failed to send order confirmation mail");
+
+                return;
+            }
+
+            _logger.LogInformation("Succeeded in sending order confirmation mail");
         }
     }
 }
