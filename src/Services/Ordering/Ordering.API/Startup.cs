@@ -9,6 +9,7 @@ using Microsoft.OpenApi.Models;
 using Ordering.Application;
 using Ordering.Application.Internal;
 using Ordering.Application.Internal.Contracts;
+using Ordering.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,7 @@ namespace Ordering.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddApplicationServices();
+            services.AddInfrastructureServices(Configuration);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
