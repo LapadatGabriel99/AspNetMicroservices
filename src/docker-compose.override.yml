@@ -89,3 +89,11 @@ services:
     ports:
       - "8003:80"
 
+  orderdb:
+    container_name: orderdb
+    environment:
+        SA_PASSWORD: "password"
+        ACCEPT_EULA: "Y"
+    restart: always
+    ports:
+        - "1433:1433"
