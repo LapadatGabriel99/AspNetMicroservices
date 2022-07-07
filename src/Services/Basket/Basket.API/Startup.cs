@@ -1,5 +1,6 @@
 using Basket.API.Repository;
 using Basket.API.Services.Grpc;
+using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -37,6 +38,16 @@ namespace Basket.API
             services.AddScoped<DiscountGrpcService>();
 
             services.AddScoped<IBasketRepository, BasketRepository>();
+
+            services.AddMassTransit(cfg => 
+            {
+                cfg.UsingRabbitMq((cfg, rabbitCfg) =>
+                {
+                    rabbitCfg.Host(Configuration.GetValue<string>("EventBusSettings:ConnectionString"));
+                });
+            });
+
+            services.AddMassTransitHostedService();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
