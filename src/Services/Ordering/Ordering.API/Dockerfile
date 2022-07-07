@@ -2,6 +2,7 @@
 
 FROM mcr.microsoft.com/dotnet/aspnet:5.0-buster-slim AS base
 WORKDIR /app
+RUN sed -i 's/TLSv1.2/TLSv1/g' /etc/ssl/openssl.cnf
 EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim AS build
