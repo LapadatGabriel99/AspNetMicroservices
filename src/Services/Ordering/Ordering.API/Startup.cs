@@ -1,3 +1,5 @@
+using EventBus.Messages.Common;
+using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -6,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Ordering.API.Mapper;
 using Ordering.Application;
 using Ordering.Application.Internal;
 using Ordering.Application.Internal.Contracts;
@@ -29,8 +32,32 @@ namespace Ordering.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(cfg =>
+            {
+                cfg.AddProfile<OrderingProfile>();
+            });
+
             services.AddApplicationServices();
             services.AddInfrastructureServices(Configuration);
+
+            services.AddMassTransit(cfg =>
+            {
+                cfg.AddConsumer<BasketCheckoutConsumer>();
+
+                cfg.UsingRabbitMq((cfg, rabbitCfg) =>
+                {
+                    rabbitCfg.Host(Configuration.GetValue<string>("EventBusSettings:ConnectionString"));
+
+                    rabbitCfg.ReceiveEndpoint(EventBusConstants.BasketCheckoutQueue, queueCfg =>
+                    {
+                        queueCfg.ConfigureConsumer<BasketCheckoutConsumer>(cfg);
+                    });
+                });
+            });
+
+            services.AddScoped<BasketCheckoutConsumer>();
+
+            services.AddMassTransitHostedService();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
