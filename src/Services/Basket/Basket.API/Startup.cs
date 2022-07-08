@@ -49,7 +49,7 @@ namespace Basket.API
             {
                 cfg.UsingRabbitMq((cfg, rabbitCfg) =>
                 {
-                    rabbitCfg.Host(Configuration.GetValue<string>("EventBusSettings:ConnectionString"));
+                    rabbitCfg.Host(Configuration.GetValue<string>("EventBusSettings:HostAddress"));
                 });
             });
 

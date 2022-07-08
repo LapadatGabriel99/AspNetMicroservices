@@ -46,7 +46,7 @@ namespace Ordering.API
 
                 cfg.UsingRabbitMq((cfg, rabbitCfg) =>
                 {
-                    rabbitCfg.Host(Configuration.GetValue<string>("EventBusSettings:ConnectionString"));
+                    rabbitCfg.Host(Configuration.GetValue<string>("EventBusSettings:HostAddress"));
 
                     rabbitCfg.ReceiveEndpoint(EventBusConstants.BasketCheckoutQueue, queueCfg =>
                     {
