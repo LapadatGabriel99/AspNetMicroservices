@@ -41,7 +41,7 @@ services:
       dockerfile: Services/Discount/Discount.GRPC/Dockerfile
 
   orderdb:
-    image: mcr.microsoft.com/mssql/server:2019-latest
+    image: mcr.microsoft.com/mssql/server:2019-CU16-GDR1-ubuntu-20.04
 
   ordering.api:
     image: ${DOCKER_REGISTRY-}orderingapi
