@@ -4,7 +4,7 @@
       // Catalog API
       "DownstreamPathTemplate": "/api/v1/Catalog",
       "DownstreamScheme": "http",
-      "DownstreamHostsAndPorts": [
+      "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
           "Port": "8000"
@@ -14,9 +14,9 @@
       "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
     },
     {
-      "DownstreamPathTemplate": "/api/v1/Catalog{id}",
+      "DownstreamPathTemplate": "/api/v1/Catalog/{id}",
       "DownstreamScheme": "http",
-      "DownstreamHostsAndPorts": [
+      "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
           "Port": "8000"
@@ -28,7 +28,7 @@
     {
       "DownstreamPathTemplate": "/api/v1/Catalog/GetProductByCategory/{category}",
       "DownstreamScheme": "http",
-      "DownstreamHostsAndPorts": [
+      "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
           "Port": "8000"

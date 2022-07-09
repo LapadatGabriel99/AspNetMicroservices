@@ -67,8 +67,7 @@ namespace Basket.API.Controllers
 
             return Ok();
         }
-        
-
+       
         [HttpPost]
         [Route("[action]")]
         [ProducesResponseType((int)HttpStatusCode.Accepted)]
