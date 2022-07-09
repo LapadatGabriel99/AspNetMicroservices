@@ -365,3 +365,6 @@ src/Services/Discount/Discount.GRPC/appsettings.json
 src/Services/Ordering/Ordering.API/Properties/
 src/Services/Ordering/Ordering.API/appsettings.Development.json
 src/Services/Ordering/Ordering.API/appsettings.json
+src/ApiGateways/OcelotApiGateway/Properties/
+src/ApiGateways/OcelotApiGateway/appsettings.Development.json
+src/ApiGateways/OcelotApiGateway/appsettings.json
