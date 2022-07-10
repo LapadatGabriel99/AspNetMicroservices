@@ -368,3 +368,7 @@ src/Services/Ordering/Ordering.API/appsettings.json
 src/ApiGateways/OcelotApiGateway/Properties/
 src/ApiGateways/OcelotApiGateway/appsettings.Development.json
 src/ApiGateways/OcelotApiGateway/appsettings.json
+src/ApiGateways/Shopping.Aggregator/Properties/
+src/ApiGateways/Shopping.Aggregator/appsettings.Development.json
+src/ApiGateways/Shopping.Aggregator/appsettings.json
+

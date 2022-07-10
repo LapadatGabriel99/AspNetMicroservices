@@ -37,7 +37,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus.Messages", "Buildi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{91C8BFEF-C68E-4A87-BC3D-D78CDB68F339}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OcelotApiGateway", "ApiGateways\OcelotApiGateway\OcelotApiGateway.csproj", "{70E79913-2819-422C-A17A-8682FA2BA14F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OcelotApiGateway", "ApiGateways\OcelotApiGateway\OcelotApiGateway.csproj", "{70E79913-2819-422C-A17A-8682FA2BA14F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopping.Aggregator", "ApiGateways\Shopping.Aggregator\Shopping.Aggregator.csproj", "{C27FBAF2-5CA7-428D-ABC1-210728BC112F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,6 +91,10 @@ Global
 		{70E79913-2819-422C-A17A-8682FA2BA14F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70E79913-2819-422C-A17A-8682FA2BA14F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70E79913-2819-422C-A17A-8682FA2BA14F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C27FBAF2-5CA7-428D-ABC1-210728BC112F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C27FBAF2-5CA7-428D-ABC1-210728BC112F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C27FBAF2-5CA7-428D-ABC1-210728BC112F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C27FBAF2-5CA7-428D-ABC1-210728BC112F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,6 +114,7 @@ Global
 		{4A72D1D3-9350-4D48-84CC-618650FF6B8F} = {ACC61810-5C08-4AF3-A782-541364198F6D}
 		{121A0716-3900-471C-A337-F9A760B08763} = {DA071724-C455-447A-9718-E79318A11C2B}
 		{70E79913-2819-422C-A17A-8682FA2BA14F} = {91C8BFEF-C68E-4A87-BC3D-D78CDB68F339}
+		{C27FBAF2-5CA7-428D-ABC1-210728BC112F} = {91C8BFEF-C68E-4A87-BC3D-D78CDB68F339}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8075B621-8E09-454F-89D9-A0DF8BC1D6D6}
