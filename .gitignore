@@ -371,4 +371,7 @@ src/ApiGateways/OcelotApiGateway/appsettings.json
 src/ApiGateways/Shopping.Aggregator/Properties/
 src/ApiGateways/Shopping.Aggregator/appsettings.Development.json
 src/ApiGateways/Shopping.Aggregator/appsettings.json
+src/WebApps/AspnetRunBasics/appsettings.json
+src/WebApps/AspnetRunBasics/appsettings.Development.json
+src/WebApps/AspnetRunBasics/Properties/
 
